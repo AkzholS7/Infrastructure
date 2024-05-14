@@ -1,5 +1,5 @@
 resource "azurerm_private_dns_zone" "aks" {
-  name                = "privatelink.canadacentral.azmk8s.io"
+  name                = "privatelink.westus.azmk8s.io"
   resource_group_name = data.azurerm_resource_group.rg.name
 }
 
@@ -63,10 +63,10 @@ resource "azurerm_role_assignment" "monitoring" {
 
 ### AKS cluster creation
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                       = "aks-pvaks-cac-001"
+  name                       = "aks-pvaks-cac-001a"
   location                   = data.azurerm_resource_group.rg.location
   resource_group_name        = data.azurerm_resource_group.rg.name
-  dns_prefix_private_cluster = "aks-pvaks-cac-001"
+  dns_prefix_private_cluster = "aks-pvaks-cac-001a"
   private_cluster_enabled    = true
   private_dns_zone_id        = azurerm_private_dns_zone.aks.id
 
@@ -77,7 +77,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   default_node_pool {
     name           = "default"
-    node_count     = 3
+    node_count     = 1
     vm_size        = "Standard_D2_v2"
     vnet_subnet_id = azurerm_subnet.aks.id
   }

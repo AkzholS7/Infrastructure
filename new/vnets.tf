@@ -1,6 +1,6 @@
 resource "azurerm_virtual_network" "vnet_hub" {
   name                = "vnet-hub"
-  location            = data.azurerm_resource_group.rg.location
+  location            = "EastUS"
   resource_group_name = data.azurerm_resource_group.rg.name
   address_space       = ["10.0.0.0/16"]
 }

@@ -1,5 +1,5 @@
 resource "azurerm_container_registry" "acr" {
-  name                          = "acrpvakscac1akzhol"
+  name                          = "acrpvakscac1akzhol7"
   resource_group_name           = data.azurerm_resource_group.rg.name
   location                      = data.azurerm_resource_group.rg.location
   sku                           = "Premium"
