@@ -8,7 +8,7 @@ terraform {
 
   backend "azurerm" {
     subscription_id      = "80ea84e8-afce-4851-928a-9e2219724c69"
-    resource_group_name  = "1-a50ef9d0-playground-sandbox"
+    resource_group_name  = "1-b919f97e-playground-sandbox"
     storage_account_name = "aksholstorageaccount7"
     container_name       = "state"
     key                  = "terraform.tfstate"
@@ -22,5 +22,5 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "rg" {
-  name = "1-a50ef9d0-playground-sandbox"
+  name = "1-b919f97e-playground-sandbox"
 }

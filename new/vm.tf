@@ -27,9 +27,9 @@ resource "azurerm_windows_virtual_machine" "vm1" {
   }
 
   source_image_reference {
-    publisher = "MicrosoftWindowsDesktop"
-    offer     = "Windows-10"
-    sku       = "21h1-ent"
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2016-Datacenter"
     version   = "latest"
   }
 }
@@ -37,10 +37,12 @@ resource "azurerm_windows_virtual_machine" "vm1" {
 variable "vm_username" {
   type        = string
   description = "Username for vm-1"
+  default = "akzhol"
 }
 
 variable "vm_password" {
   type        = string
   sensitive   = true
   description = "Password for vm-1"
+  default = "SomeRe@llySecureP@ssw0rdToNotUseIn2021"
 }
