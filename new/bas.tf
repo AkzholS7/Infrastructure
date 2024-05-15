@@ -1,6 +1,6 @@
 resource "azurerm_public_ip" "bas" {
   name                = "pip-bas-cac-001"
-  location            = data.azurerm_resource_group.rg.location
+  location            = "EastUS"
   resource_group_name = data.azurerm_resource_group.rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
@@ -8,7 +8,7 @@ resource "azurerm_public_ip" "bas" {
 
 resource "azurerm_bastion_host" "bas" {
   name                = "bas-pvaks-cac-001"
-  location            = data.azurerm_resource_group.rg.location
+  location            = "EastUS"
   resource_group_name = data.azurerm_resource_group.rg.name
 
   ip_configuration {

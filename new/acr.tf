@@ -1,7 +1,7 @@
 resource "azurerm_container_registry" "acr" {
   name                          = "acrpvakscac1akzhol7"
   resource_group_name           = data.azurerm_resource_group.rg.name
-  location                      = data.azurerm_resource_group.rg.location
+  location                      = "EastUS"
   sku                           = "Premium"
   admin_enabled                 = false
   public_network_access_enabled = false
@@ -28,7 +28,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "acr2" {
 
 resource "azurerm_private_endpoint" "acr" {
   name                = "pe-acr-cac-001"
-  location            = data.azurerm_resource_group.rg.location
+  location            = "EastUS"
   resource_group_name = data.azurerm_resource_group.rg.name
   subnet_id           = azurerm_subnet.global.id
 

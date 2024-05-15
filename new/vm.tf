@@ -1,6 +1,6 @@
 resource "azurerm_network_interface" "nic" {
   name                = "nic-vm-1"
-  location            = data.azurerm_resource_group.rg.location
+  location            = "EastUS"
   resource_group_name = data.azurerm_resource_group.rg.name
 
   ip_configuration {
@@ -13,7 +13,7 @@ resource "azurerm_network_interface" "nic" {
 resource "azurerm_windows_virtual_machine" "vm1" {
   name                = "vm-1"
   resource_group_name = data.azurerm_resource_group.rg.name
-  location            = data.azurerm_resource_group.rg.location
+  location            = "EastUS"
   size                = "Standard_D2s_v3"
   admin_username      = var.vm_username
   admin_password      = var.vm_password
